@@ -2,11 +2,9 @@ import express from "express";
 import nodemailer from "nodemailer";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from 'path';
 
 dotenv.config();
 
-const __dirname = path.resolve();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -48,12 +46,6 @@ app.post("/contact", async (req, res) => {
 
 console.log("ENV:", process.env.EMAIL_USER);
 
-// Serve frontend
-app.use(express.static(path.join(__dirname, "client/dist")));
-
-app.use((req, res) => {
-     res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
 
 app.listen(PORT, () => {
      console.log(`Server running on port ${PORT}`);

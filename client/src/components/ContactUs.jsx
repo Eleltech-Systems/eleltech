@@ -17,7 +17,7 @@ export default function ContactUs() {
           setLoading(true);
 
           try {
-               const res = await fetch("https://eleltech.onrender.com/contact", {
+               const res = await fetch("https://agent-69c62edcd36d8--helpful-sfogliatella-ac51f3.netlify.app/contact", {
                     method: "POST",
                     headers: {
                          "Content-Type": "application/json"
